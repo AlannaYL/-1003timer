@@ -9,7 +9,15 @@
 </head>
 
 <body>
-    <script></script>
+    <script>
+        const timer = setInterval(() => {
+            document.write('過了一毫秒<br>')
+        }, 1000);
+
+        setTimeout(() => {
+            clearInterval(timer)
+        }, 5000)
+    </script>
 </body>
 
 </html>
