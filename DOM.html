@@ -10,10 +10,31 @@
 
 <body>
     <h1 id="title">標題</h1>
+    <h2>1111</h2>
+    <h2>2222</h2>
+    <h3 class="text-red">我不想要紅色</h3>
+    <h3 class="text-red">挖愛昂謝</h3>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
-        title.innerText = '嘿嘿 見鬼啦'
+        title.innerText = '歐喵菇喵'
+
+
+        // 只有ID是單數，其他都是複數，有Element's'代表為陣列
+        const h2 = document.getElementsByTagName('h2')
+        // h2.foreach(el => {
+        //     el.innerText('aaa')
+        // })>>>無法使用foreach去跑
+        for (const el of h2) {
+            el.innerHTML = '<i>aaa</i>'
+            console.log(el.innerHTML, el.innerText)
+        }
+
+        const reds = document.getElementsByClassName('text-red')
+        for (const el of reds) {
+            // 使用改行內樣式的方法更改顏色
+            el.style.color = 'red'
+        }
     </script>
 </body>
 
