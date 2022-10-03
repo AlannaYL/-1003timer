@@ -22,6 +22,8 @@
 
     <h3 class="text-blue">我想當紅色</h3>
     <h3 class="text-blue">我也是</h3>
+    <h4 class="text-center">111</h4>
+    <h4 class="text-center">222</h4>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -46,11 +48,19 @@
 
         const blues = document.getElementsByClassName('text-blue')
         for (const el of blues) {
-            // el.style取行內樣使
+            // el.style使用內樣式去更改css屬性
             console.log(el.style.blue)
             // 最終樣式樣要用window.getComputedStyle(元素, 偽元素名稱).getPropertyValue(樣式名)
             // 最終樣式樣要用window.getComputedStyle(el, ':before').getPropertyValue('background')
             console.log(window.getComputedStyle(el, null).getPropertyValue('color'))
+        }
+
+        // const center = document.querySelector('.text-center') 只抓一個
+        // 抓符合全部的選擇器
+        const centers = document.querySelectorAll('.text-center')
+        for (const el of centers) {
+            // el.style.textAligh = 'center'
+            el.style['text-aligh'] = 'center'
         }
     </script>
 </body>
