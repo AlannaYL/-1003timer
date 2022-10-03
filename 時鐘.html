@@ -11,8 +11,11 @@
             margin: 0;
         }
 
+        /*#FAF3D4 #DEB785 #F5A393 #B4ABDE #E07BCC*/
+
+        /* 鍾盤 */
         #clock {
-            background: black;
+            background: #FAF3D4;
             width: 300px;
             height: 300px;
             position: relative;
@@ -20,12 +23,64 @@
             border-radius: 50%;
             top: calc(50vh - 150px);
         }
+
+        /* 時針 */
+        #hour {
+            width: 20%;
+            height: 10px;
+            background: #DEB785;
+            position: absolute;
+            top: calc(50% - 5px);
+            left: calc(50% - 5px);
+            border-radius: 5px;
+            transform-origin: left center;
+        }
+
+        /* 分針 */
+        #minute {
+            width: 40%;
+            height: 10px;
+            background: #F5A393;
+            position: absolute;
+            top: calc(50% - 5px);
+            left: calc(50% - 5px);
+            border-radius: 5px;
+            transform-origin: left center;
+        }
+
+        /* 秒針 */
+        #second {
+            width: 50%;
+            height: 10px;
+            background: #B4ABDE;
+            position: absolute;
+            top: calc(50% - 5px);
+            left: calc(50% - 5px);
+            border-radius: 5px;
+            transform-origin: left center;
+        }
     </style>
 </head>
 
 <body>
-    <div id="clock"></div>
-    <script></script>
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+
+    <script>
+        const hour = document.getElementById('hour')
+        const minute = document.getElementById('minute')
+        const second = document.getElementById('second')
+
+        setInterval(() => {
+            const date = new Date()
+            hour.style.transform = `rotate(${date.getHours() * 30 - 90}deg)`
+            minute.style.transform = `rotate(${date.getMinutes() * 6 - 90}deg)`
+            second.style.transform = `rotate(${date.getSeconds() * 6 - 90}deg)`
+        }, 1000)
+    </script>
 </body>
 
 </html>
