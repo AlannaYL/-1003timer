@@ -46,6 +46,9 @@
         <li id="ul2li2">2</li>
         <li class="border">3</li>
     </ul>
+    <div id="div">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -104,6 +107,12 @@
         // for (let i = 0;i<2;i++){
         //     el= el.parentElement
         // }
+
+        const div = document.getElementById('div')
+        div.insertAdjacentHTML('beforeend', '<h1>beforeend</h1>')
+        div.insertAdjacentHTML('beforebegin', '<h1>beforebegin</h1>')
+        div.insertAdjacentHTML('afterend', '<h1>afterend</h1>')
+        div.insertAdjacentHTML('afterbegin', '<h1>afterbegin</h1>')
     </script>
 </body>
 
