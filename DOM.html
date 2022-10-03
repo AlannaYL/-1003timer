@@ -9,7 +9,12 @@
 </head>
 
 <body>
-    <script></script>
+    <h1 id="title">標題</h1>
+    <script>
+        const title = document.getElementById('title')
+        console.log(`title的文字是 ${title.innerText}`)
+        title.innerText = '嘿嘿 見鬼啦'
+    </script>
 </body>
 
 </html>
