@@ -9,7 +9,19 @@
 </head>
 
 <body>
-    <script></script>
+    <script>
+        for (let i = 1; i <= 5; i++) {
+            setTimeout(() => {
+                console(i)
+            }, 3000)
+        }
+
+        for (var i = 1; i <= 5; i++) {
+            setTimeout(() => {
+                console.log(i)
+            }, 3000)
+        }
+    </script>
 </body>
 
 </html>
