@@ -24,6 +24,11 @@
     <h3 class="text-blue">我也是</h3>
     <h4 class="text-center">111</h4>
     <h4 class="text-center">222</h4>
+
+    <div class="links">
+        <a href="https://google.com"></a>
+        <a href="https://fb.com"></a>
+    </div>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -61,6 +66,11 @@
         for (const el of centers) {
             // el.style.textAligh = 'center'
             el.style['text-aligh'] = 'center'
+        }
+        // getElementById('#links a')
+        const links = document.getElementById('links').children
+        for (const el of links) {
+            el.href = 'https://github.com'
         }
     </script>
 </body>
