@@ -10,12 +10,18 @@
 
 <body>
     <script>
-        const delay = 10
-        const timer = setInterval(() => {
-            document.write(delay-- + '<br>')
-            if (number < 0)
-                clearInterval(timer)
-        }, 1000);
+        // const delay = 10
+        // const timer = setInterval(() => {
+        //     document.write(delay-- + '<br>')
+        //     if (number < 0)
+        //         clearInterval(timer)
+        // }, 1000);
+
+        for (let i = 10; i >= 0; i--) {
+            setTimeout(() => {
+                document.write(i + '<br>')
+            }, 1000 * (10 - i))
+        }
     </script>
 </body>
 
