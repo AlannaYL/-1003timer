@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+        // User輸入數字
+        let timeS = parseInt(prompt('請輸入數字'))
+        // 抓標籤
+        const p = document.getElementsByTagName('p')[0]
+        // 倒數計時器
+        const Timer = setInterval(() => {
+            // 顯示倒數
+            p.style.color = 'blue'
+            p.innerText = '剩餘' + timeS-- + '秒'
+
+            if (timeS < 0) {
+                clearInterval(Timer)
+                p.style.color = 'red'
+                p.innerHTML = '時間結束'
+            }
+        }, 1000)
+
+    </script>
+</body>
+
+</html>
