@@ -49,6 +49,9 @@
     <div id="div">
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
+    <div id="div2">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -113,6 +116,14 @@
         div.insertAdjacentHTML('beforebegin', '<h1>beforebegin</h1>')
         div.insertAdjacentHTML('afterend', '<h1>afterend</h1>')
         div.insertAdjacentHTML('afterbegin', '<h1>afterbegin</h1>')
+
+        const div2 = document.getElementById('div2')
+        const image = document.createElement('img')
+        image.src = 'https://github.com/rogeraabbccdd.png'
+        image.width = '100'
+        image.heigh = '100'
+        div2.append(image)
+        div2.prepend(image)
     </script>
 </body>
 
