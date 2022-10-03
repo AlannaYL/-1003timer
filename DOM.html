@@ -10,6 +10,10 @@
         .text-blue {
             color: blue;
         }
+
+        .border {
+            border: 1px solid brown;
+        }
     </style>
 </head>
 
@@ -25,10 +29,22 @@
     <h4 class="text-center">111</h4>
     <h4 class="text-center">222</h4>
 
-    <div class="links">
-        <a href="https://google.com"></a>
-        <a href="https://fb.com"></a>
+    <div id="links">
+        <a href="https://google.com">Google</a>
+        <a href="https://fb.com">FB</a>
     </div>
+
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul id="ul2">
+        <li class="border">1</li>
+        <li id="ul2li2">2</li>
+        <li class="border">3</li>
+    </ul>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -67,11 +83,26 @@
             // el.style.textAligh = 'center'
             el.style['text-aligh'] = 'center'
         }
-        // getElementById('#links a')
+        // 也可寫成getElementById('#links a')
         const links = document.getElementById('links').children
         for (const el of links) {
             el.href = 'https://github.com'
         }
+
+        const ul1 = document.getElementById('ul1')
+        ul1.firstElementChild.classList.add('text-blue')
+        ul1.lastElementChild.classList.add('border')
+
+        const ul2li2 = document.getElementById('ul2li2')
+        ul2li2.previousElementSibling.classList.remove('border')
+        ul2li2.nextElementSibling.classList.remove('border')
+        ul2li2.parentElement.style.background = 'gray'
+
+        // 抓上兩層
+        // let el = document.getElementById('xxx')
+        // for (let i = 0;i<2;i++){
+        //     el= el.parentElement
+        // }
     </script>
 </body>
 
