@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .text-blue {
+            color: blue;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,6 +19,9 @@
     <h2>2222</h2>
     <h3 class="text-red">我不想要紅色</h3>
     <h3 class="text-red">挖愛昂謝</h3>
+
+    <h3 class="text-blue">我想當紅色</h3>
+    <h3 class="text-blue">我也是</h3>
     <script>
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
@@ -34,6 +42,15 @@
         for (const el of reds) {
             // 使用改行內樣式的方法更改顏色
             el.style.color = 'red'
+        }
+
+        const blues = document.getElementsByClassName('text-blue')
+        for (const el of blues) {
+            // el.style取行內樣使
+            console.log(el.style.blue)
+            // 最終樣式樣要用window.getComputedStyle(元素, 偽元素名稱).getPropertyValue(樣式名)
+            // 最終樣式樣要用window.getComputedStyle(el, ':before').getPropertyValue('background')
+            console.log(window.getComputedStyle(el, null).getPropertyValue('color'))
         }
     </script>
 </body>
