@@ -53,24 +53,29 @@
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <script>
+        // 用id抓元素
         const title = document.getElementById('title')
         console.log(`title的文字是 ${title.innerText}`)
+        // innerText 元素內文字
         title.innerText = '歐喵菇喵'
 
 
         // 只有ID是單數，其他都是複數，有Element's'代表為陣列
+        // 使用標籤名抓元素
         const h2 = document.getElementsByTagName('h2')
+        // 抓下來是陣列
         // h2.foreach(el => {
         //     el.innerText('aaa')
         // })>>>無法使用foreach去跑
-        for (const el of h2) {
+        for (const el of h2) {//用迴圈一次改
             el.innerHTML = '<i>aaa</i>'
+            // .innerHTML 元素內的HTML
             console.log(el.innerHTML, el.innerText)
         }
-
+        // 用class名抓元素
         const reds = document.getElementsByClassName('text-red')
         for (const el of reds) {
-            // 使用改行內樣式的方法更改顏色
+            // .style行內樣式的方法更改顏色
             el.style.color = 'red'
         }
 
@@ -83,26 +88,32 @@
             console.log(window.getComputedStyle(el, null).getPropertyValue('color'))
         }
 
-        // const center = document.querySelector('.text-center') 只抓一個
-        // 抓符合全部的選擇器
+        // const center = document.querySelector('.text-center') 用css選擇器只抓一個
+        // querySelectorAll抓取多個選擇器
         const centers = document.querySelectorAll('.text-center')
         for (const el of centers) {
             // el.style.textAligh = 'center'
             el.style['text-align'] = 'center'
         }
         // 也可寫成getElementById('#links a')
+        // .children取內部所有元素
         const links = document.getElementById('links').children
         for (const el of links) {
             el.href = 'https://github.com'
         }
 
         const ul1 = document.getElementById('ul1')
+        // firstElementChild裡面的第一個
         ul1.firstElementChild.classList.add('text-blue')
+        // lastElementChild裡面的最後一個
         ul1.lastElementChild.classList.add('border')
 
         const ul2li2 = document.getElementById('ul2li2')
+        // 同一層上一個previousElementSibling
         ul2li2.previousElementSibling.classList.remove('border')
+        // 同層下一個nextElementSibling
         ul2li2.nextElementSibling.classList.remove('border')
+        // 上層
         ul2li2.parentElement.style.background = 'gray'
 
         // 抓上兩層
@@ -111,18 +122,22 @@
         //     el= el.parentElement
         // }
 
+        // 插入HTML
         const div = document.getElementById('div')
         div.insertAdjacentHTML('beforeend', '<h1>beforeend</h1>')
         div.insertAdjacentHTML('beforebegin', '<h1>beforebegin</h1>')
         div.insertAdjacentHTML('afterend', '<h1>afterend</h1>')
         div.insertAdjacentHTML('afterbegin', '<h1>afterbegin</h1>')
 
+        // 新增元素
         const div2 = document.getElementById('div2')
         const image = document.createElement('img')
         image.src = 'https://github.com/rogeraabbccdd.png'
         image.width = '100'
         image.heigh = '100'
+        // 用append放進div2的結尾標籤前
         div2.append(image)
+        // 用prepend放進div2後開始標籤前
         div2.prepend(image)
     </script>
 </body>
