@@ -24,6 +24,10 @@
         }
         // setTimeout(function 名， delay 毫秒,傳入 function 的參數)
         setTimeout(msg, 3000, 3000, '早安')
+        // 會繼續往下跑，過三秒再回來跑setTimeout
+        // console.log('abc')
+        const delayHi = setTimeout(msg, 3000, 3000, '早安')
+        clearTimeout(delayHi)
     </script>
 </body>
 
