@@ -10,7 +10,9 @@
 
 <body>
     <p></p>
+    <h1 id="text"></h1>
     <script>
+        /*
         // User輸入數字
         let timeS = parseInt(prompt('請輸入數字'))
         // 抓標籤
@@ -27,7 +29,22 @@
                 p.innerHTML = '時間結束'
             }
         }, 1000)
+        */
 
+
+        // 老師解答版
+        let input = parseInt(prompt(''))
+        const text = document.getElementById('text')
+        text.style.color = 'blue'
+        text.innerText = `剩餘${input}秒`
+        let timer = setInterval(() => {
+            text.innerText = `剩餘${--input}秒`
+            if (input === 0) {
+                text.innerText = '時間到'
+                text.style.color = 'red'
+                clearInterval(Timer)
+            }
+        }, 1000)
     </script>
 </body>
 
