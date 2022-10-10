@@ -17,10 +17,10 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+
         }
 
         /*#FAF3D4 #DEB785 #F5A393 #B4ABDE #E07BCC*/
-
         /* 鍾盤 */
         #clock {
             width: 500px;
@@ -36,38 +36,65 @@
             top: calc(50vh - 150px);
         }
 
+        .scale li {
+            list-style: none;
+            width: 2px;
+            height: 30px;
+            background: #F5A393;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 5px);
+            transform-origin: center 270px;
+        }
+
+        .scale li:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .scale li:nth-child(2) {
+            transform: rotate(20deg);
+        }
+
+        .scale li:nth-child(3) {
+            transform: rotate(40deg);
+            z-index: -1;
+        }
+
+        /* 秒針 */
+        #second {
+            width: 45%;
+            height: 1px;
+            background: #F5A393;
+            box-shadow: 0 0 5px rgb(180, 171, 222),
+                0 0 10px rgba(246, 220, 217, 0.8),
+                0 0 20px rgba(250, 250, 250, 0.5);
+            position: absolute;
+            top: calc(50% - 5px);
+            left: calc(50% - 5px);
+            border-radius: 5px;
+            transform-origin: left center;
+        }
+
         /* 時針 */
         #hour {
             width: 20%;
             height: 10px;
-            background: #DEB785;
+            background: rgb(251, 206, 200);
             position: absolute;
-            top: calc(50% - 5px);
-            left: calc(50% - 5px);
+            top: calc(50% - 3px);
+            left: calc(51% - 3px);
             border-radius: 5px;
             transform-origin: left center;
         }
 
         /* 分針 */
         #minute {
-            width: 40%;
+            width: 30%;
             height: 10px;
             background: #F5A393;
             position: absolute;
-            top: calc(50% - 5px);
-            left: calc(50% - 5px);
-            border-radius: 5px;
-            transform-origin: left center;
-        }
-
-        /* 秒針 */
-        #second {
-            width: 50%;
-            height: 10px;
-            background: #B4ABDE;
-            position: absolute;
-            top: calc(50% - 5px);
-            left: calc(50% - 5px);
+            top: calc(50% - 3px);
+            left: calc(50% - 3px);
             border-radius: 5px;
             transform-origin: left center;
         }
@@ -76,6 +103,12 @@
 
 <body>
     <div id="clock">
+        <ul class="scale">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="clock-face"></div>
         <div id="hour"></div>
         <div id="minute"></div>
         <div id="second"></div>
