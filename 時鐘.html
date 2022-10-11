@@ -17,10 +17,19 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-
         }
 
-        /*#FAF3D4 #DEB785 #F5A393 #B4ABDE #E07BCC*/
+        #clock-face {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgb(251, 206, 200);
+            position: relative;
+            margin: auto;
+            top: calc(50vh - 260px);
+            z-index: 5;
+        }
+
         /* 鍾盤 */
         #clock {
             width: 500px;
@@ -36,28 +45,102 @@
             top: calc(50vh - 250px);
         }
 
+        .num li {
+            list-style: none;
+            font-size: 3rem;
+            position: absolute;
+            color: #F5A393
+        }
+
+        /* 12點 */
+        .num li:nth-child(1) {
+
+            transform-origin: center 250px;
+            top: 0;
+            left: calc(50% - 20px);
+        }
+
+        /* 3點 */
+        .num li:nth-child(2) {
+
+            transform-origin: center 250px;
+            top: calc(50% - 32px);
+            right: 0;
+        }
+
+        /* 6點 */
+        .num li:nth-child(3) {
+
+            transform-origin: center 250px;
+            bottom: 0;
+            left: calc(50% - 20px);
+        }
+
+        /* 9點 */
+        .num li:nth-child(4) {
+
+            transform: rotate(0deg);
+            top: calc(50% - 26px);
+            left: 0;
+        }
+
         .scale li {
             list-style: none;
             width: 2px;
             height: 30px;
-            background: #F5A393;
+            background: rgb(251, 206, 200);
             position: absolute;
             top: 0;
             left: calc(50% - 5px);
-            transform-origin: center 270px;
         }
 
+        /* 1點 */
         .scale li:nth-child(1) {
-            transform: rotate(0deg);
+            transform: rotate(28deg);
+            transform-origin: center 260px;
+
         }
 
+        /* 2點 */
         .scale li:nth-child(2) {
-            transform: rotate(20deg);
+            transform: rotate(57deg);
+            transform-origin: center 260px;
         }
 
+        /* 4點 */
         .scale li:nth-child(3) {
-            transform: rotate(40deg);
-            z-index: -1;
+            transform: rotate(119deg);
+            transform-origin: center 253px;
+        }
+
+        /* 5點 */
+        .scale li:nth-child(4) {
+            transform: rotate(150deg);
+            transform-origin: center 251.5px;
+        }
+
+        /* 7點 */
+        .scale li:nth-child(5) {
+            transform: rotate(211deg);
+            transform-origin: center 249px;
+        }
+
+        /* 8點 */
+        .scale li:nth-child(6) {
+            transform: rotate(240deg);
+            transform-origin: center 248px;
+        }
+
+        /* 10點 */
+        .scale li:nth-child(7) {
+            transform: rotate(300deg);
+            transform-origin: center 244px;
+        }
+
+        /* 11點 */
+        .scale li:nth-child(8) {
+            transform: rotate(330deg);
+            transform-origin: center 244px;
         }
 
         /* 秒針 */
@@ -103,7 +186,18 @@
 
 <body>
     <div id="clock">
+        <ul class="num">
+            <li>12</li>
+            <li>3</li>
+            <li>6</li>
+            <li>9</li>
+        </ul>
         <ul class="scale">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
             <li></li>
             <li></li>
             <li></li>
