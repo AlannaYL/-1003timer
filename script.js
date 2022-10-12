@@ -47,7 +47,7 @@ class Sakura {
     draw() {
 
         if (this.x > canvas.width || this.y > canvas.height) {
-            this.x = -sakuraImg.width; // 刚好藏住
+            this.x = -sakuraImg.width;
             this.y = (Math.random() * canvas.height * 2) - canvas.height
             this.rotate = Math.random()
             this.rotateSpeed = Math.random() * 0.02
@@ -66,7 +66,7 @@ class Sakura {
     }
 
     animate() {
-        this.x += this.xSpeed + mouseX * 5
+        this.x += this.xSpeed + mouseX * 2
         this.y += this.ySpeed + mouseX * 2
         this.rotate += this.rotateSpeed
         this.draw()
@@ -105,4 +105,4 @@ function touchHandler(e) {
 }
 
 window.addEventListener('mousemove', touchHandler)
-window.addEventListener('touchmove', touchHandler)
+// window.addEventListener('touchmove', touchHandler)
